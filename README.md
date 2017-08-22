@@ -1,1 +1,4 @@
-# React-videos-basic
+
+
+> npm install
+> npm start
