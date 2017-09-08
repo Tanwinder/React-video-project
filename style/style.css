@@ -13,7 +13,7 @@
   margin: 0 auto;
 }
 .search-bar {
-  width: 50vw;
+  flex-basis: 50%;
   margin: 10px auto;
 }
 .search-bar > div {
@@ -72,13 +72,15 @@
     flex-wrap: wrap;
     margin-left: auto;
     margin-right: auto;
+    justify-content: space-between;
   }
   .video-display-container {
     flex-basis: 64%;
     margin: 0;
   }
   .video-list {
-    flex-basis: 33%;
+    flex-basis: 34%;
     padding: 0;
+    margin: 0;
   }
 }
