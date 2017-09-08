@@ -8,7 +8,7 @@ const VideoListItem=(props)=> {
     window.scrollTo(0,0);
   }
   return (
-    <li onClick={(e)=> {kida(e)}}>
+    <li className="video-list-items" onClick={(e)=> {kida(e)}}>
     <div className="video-list media">
             <div className="media-left">
               <img className="media-object" src={imgUrl} />

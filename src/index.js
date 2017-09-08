@@ -15,12 +15,10 @@ class App extends Component {
       videos:[],
     onselect: null
   };
-  this.a('ranjit')
+  this.youtubeVideosData('sandlas')
   }
 
-
-
-  a(term) {
+  youtubeVideosData(term) {
     YTSearch({key: API_KEY, term:term}, (data) => {
       this.setState({
         videos:data,
@@ -29,10 +27,9 @@ class App extends Component {
     })
   }
   render(){
-    const jkl = _.debounce((term)=> {this.a(term)},400);
     return(
-      <div>
-      <SearchBar onInputChange={jkl}/>
+      <div className="app-main-container">
+      <SearchBar onInputChange={term => this.youtubeVideosData(term)}/>
       <VideoDetails video={this.state.onselect}/>
       <VideoList
       videos={this.state.videos}
