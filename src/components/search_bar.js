@@ -60,7 +60,7 @@ class SearchBar extends Component {
           <div
             className="react-autocomplete-dropdown"
             key={item.id}
-            style={{ backgroundColor: highlighted ? '#cc0000' : 'transparent', color: highlighted ? 'white' : 'black'}} >
+            style={{ backgroundColor: highlighted ? '#1c62b9' : 'transparent', color: highlighted ? 'white' : 'black'}} >
             {item.label}
           </div>
         }

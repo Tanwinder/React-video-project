@@ -2,7 +2,8 @@ import _ from 'lodash';
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import YTSearch from 'youtube-api-search';
-import SearchBar from './components/search_bar';
+import HeaderNavBar from './components/header_navbar';
+import HamburgerNav from './components/hamburger-nav';
 import VideoDetails from './components/video_details';
 import VideoList from './components/video_list';
 
@@ -29,14 +30,15 @@ class App extends Component {
   render(){
     return(
       <div className="app-main-container">
-      <SearchBar onInputChange={term => this.youtubeVideosData(term)}/>
-      <VideoDetails video={this.state.onselect}/>
-      <VideoList
-      videos={this.state.videos}
-      onselected={(term)=> {this.setState({onselect:term})}}/>
+        <HeaderNavBar onInputChange={term => this.youtubeVideosData(term)} />
+        <div className="content-container">
+        <VideoDetails video={this.state.onselect}/>
+        <VideoList
+          videos={this.state.videos}
+          onselected={(term)=> {this.setState({onselect:term})}}/></div>
       </div>
     );
   }
 }
 
-ReactDOM.render(<App />, document.querySelector('.app-container'));
+ReactDOM.render(<App />, document.querySelector('.my-app'));
