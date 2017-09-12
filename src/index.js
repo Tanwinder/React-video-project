@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import YTSearch from 'youtube-api-search';
 import HeaderNavBar from './components/header_navbar';
+import VideoWithIcon from './components/icon_videos';
 import HamburgerNav from './components/hamburger-nav';
 import VideoDetails from './components/video_details';
 import VideoList from './components/video_list';
@@ -35,7 +36,9 @@ class App extends Component {
         <VideoDetails video={this.state.onselect}/>
         <VideoList
           videos={this.state.videos}
-          onselected={(term)=> {this.setState({onselect:term})}}/></div>
+          onselected={(term)=> {this.setState({onselect:term})}}/>
+        </div>
+        <VideoWithIcon videosData={this.state.videos}/>
       </div>
     );
   }
