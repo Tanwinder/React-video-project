@@ -39,6 +39,9 @@ class App extends Component {
           onselected={(term)=> {this.setState({onselect:term})}}/>
         </div>
         <VideoWithIcon videosData={this.state.videos}/>
+        <VideoWithIcon videosData={this.state.videos}/>
+        <VideoWithIcon videosData={this.state.videos}/>
+        <VideoWithIcon videosData={this.state.videos}/>
       </div>
     );
   }

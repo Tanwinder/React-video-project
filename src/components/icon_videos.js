@@ -1,9 +1,17 @@
 import React from 'react';
 
 const VideoWithIcon = (props) => {
+
   const videosData = props.videosData;
-  console.log(videosData);
+
+  const playVideo = (e) => {
+    console.log(e.target.parentNode.parentNode);
+    e.target.parentNode.parentNode.classList.add("otherclass");
+  }
+
   const c = videosData.map((item,i) => {
+    const videoId = item.id.videoId;
+    const url = `https://www.youtube.com/embed/${videoId}`;
     if(i == 4) {
       return;
     }
@@ -11,14 +19,18 @@ const VideoWithIcon = (props) => {
       <div key={item.etag} className="video-outer">
       <img className="fourimage-video-image" src={item.snippet.thumbnails.default.url}/>
       <div className="video-title fourimage-video-title">
-      <button type="button" className="video-play-button">
+      <button onClickCapture={(e)=> playVideo(e)} type="button" className="video-play-button">
       <img className="video-play-button-icon" src="../images/play-icon.png" />
       </button>
       <p>{item.snippet.title}</p>
       </div>
+      <div className="video-player embed-responsive embed-responsive-16by9">
+        <iframe className="embed-responsive-item" src={url}></iframe>
+      </div>
       </div>
     );
-  })
+  });
+
   return(
     <div className="videos-icon">
     {c}</div>
