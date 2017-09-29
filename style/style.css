@@ -294,5 +294,28 @@ desktop start
   }
   .otherclass ~ .video-player.embed-responsive {
     display: block;
+    Z-INDEX: 1;
+  }
+  .otherclass ~ .video-player.embed-responsive .embed-responsive-item {
+    position: fixed;
+    top: 60px;
+    bottom: 0;
+    left: 25%;
+    width: 50%;
+    height: 60%;
+    border: 0;
+  }
+  .close-btn {
+    display: none;
+  }
+  .otherclass .close-btn {
+    display: block;
+    z-index: 1;
+    background: red;
+    position: fixed;
+    top: 80px;
+    left: 83vw;
+    cursor: pointer;
+    padding: 5px 10px;
   }
 }
